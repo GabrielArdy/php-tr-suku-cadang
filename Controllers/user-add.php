@@ -9,5 +9,6 @@ if (isset($_POST['submit'])) {
         header("Location: ../Views/login.php");
     } else {
         echo "User not added";
+        //test
     }
 }

@@ -16,7 +16,11 @@
         <input type="number" name="stock" placeholder="Stock"> <br>
         <label for="">description</label> <br>
         <textarea name="description" id="" cols="30" rows="10"></textarea> <br>
-        <input type="text" name="category" placeholder="Category"> <br>
+        <select name="category" id="">
+            <option value="1">Category 1</option>
+            <option value="2">Category 2</option>
+            <option value="3">Category 3</option>
+        </select><br>
         <input type="submit" name="submit" value="Add Product">
     </form>
 </body>

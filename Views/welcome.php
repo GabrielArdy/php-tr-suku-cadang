@@ -3,6 +3,10 @@ session_start();
 if (!isset($_SESSION['username'])) {
     header("Location: ../Views/login.php");
 }
+
+include '../Models/product-manipulation.php';
+$product = new Product();
+$result = $product->displayProducts();
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +22,16 @@ if (!isset($_SESSION['username'])) {
 <body>
     <h1>WELCOME USER</h1>
     <a href="../Controllers/logout-controller.php">LogOut</a>
+
+    <?php foreach ($result as $key => $value) { ?>
+        <div>
+            <h3><?php echo $value['name'] ?></h3>
+            <p><?php echo $value['price'] ?></p>
+            <p><?php echo $value['stock'] ?></p>
+            <p><?php echo $value['description'] ?></p>
+            <p><?php echo $value['category'] ?></p>
+        </div>
+    <?php } ?>
 </body>
 
 </html>

@@ -16,6 +16,7 @@ if ($userData) {
         header("Location: ../Views/dashboard.php");
     } else {
         session_start();
+        $_SESSION['id'] = $userData['id'];
         $_SESSION['username'] = $userData['username'];
         $_SESSION['roles'] = $roles;
         header("Location: ../Views/welcome.php");
